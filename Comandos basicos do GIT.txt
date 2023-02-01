@@ -1,0 +1,174 @@
+**  Comandos Basicos do GIT  **
+
+
+**  git init*
+
+Inicializa um repositório GIT vazio na pasta que eu escolher.
+
+
+**  ls-als
+
+Mostra os arquivos ocultos, inclusive o que acabou de ser criado no gitinit.
+
+
+**  ls
+
+Mostra as pastas dentro do local que eu escolhi.
+
+
+**  cd.git
+
+Entra nos arquivos .git que estão ocultos.
+
+
+**  cd..
+
+Sai da última pasta.
+
+
+**  Git status*
+
+Mostra o que está acontecendo, se está com commit e dai fazer alguma coisa.
+
+
+**  Git push
+
+Envia o arquivo criado para o repositório de origem.
+
+
+** 1º commit:
+git commit -n
+
+Tentar criar sempre as mensagens em inglês.
+
+Fiquei na dúvida se é m ou n!!!!
+
+git commit -m (m de mensagem)
+
+???
+
+Após o git commit fazer o git status para conferir se está ok.
+
+**  git add.*
+
+Adiciona arquivos a pasta
+
+
+**  ↑↓ seta para cima ou para baixo
+
+Navega nos comandos já digitados anteriormente.
+
+
+**  git log*
+
+Vê o status dos commits. Trás as informações do sha1 e quem fez a alteração (está versionado).
+
+Sempre que fizer alguma alteração no arquivo via VSCODE (ou outro) dar o comando GIT STATUS, para saber como está o arquivo e 
+depois um GIT ADD antes do novo GIT COMMIT.
+
+Caso eu tenha feito alguma alteração que eu não gostei, eu posso dar um GIT LOG e ver quando foi feita a alteração que eu quero voltar.
+
+Em seguida vou para:
+
+**  git checkout 
+
+e começo a digitar o SHA1 e ele voltará para aquela alteração que estava.
+
+O GIT recomenda que eu crie uma Branch nova para cada grande alteração, não fazer na master.
+
+
+Para isso usar o comando:
+
+**  git checkout -b (e colocar o nome da branch em seguida)
+
+
+Se eu der o comando:
+
+**  git branch
+
+Ele vai mostrar a branch que eu estou
+
+Ao criar várias branchs eu não preciso criar vários arquivos, crio apenas branchs diferentes.
+
+
+Caso eu queira renomear a branch eu uso o comando:
+
+**  git branch m- main
+
+
+Depois quando eu quiser subir o projeto para o GITHUB eu crio o repositório que eu quero e aponto para o endereço com o seguinte comando:
+
+**  git remote add origin https:// etc. ( colocar o endereço que eu desejo do GITHUB).
+
+
+Depois eu subo para o GITHUB com este comado:
+
+**  git push -u origin main (só na 1º vez, depois não precisa)
+
+
+Para baixar o projeto do GIT para o PC:
+
+**  git clone https:// etc. ( colocar o endereço que eu desejo do GITHUB).
+
+
+No GITHUB é possível unir alterações, é só clicar em "COMPARE E PULL REQUEST"
+
+Ele vai perguntar de "qual" arquivo vai para "qual" e depois clicar em "CREATE PULL REQUEST" e ele une automaticamente.
+
+Outros importantes:
+
+
+**  9. Git revert
+Às vezes, precisamos desfazer as alterações que fizemos. Existem várias maneiras de se desfazer as alterações em nosso espaço de trabalho local ou remotamente 
+(dependendo do que você necessita), mas devemos usar esses comandos com cuidado para evitar exclusões indesejadas.
+
+Uma maneira segura de desfazer nossos commits é usando git revert. Para ver nosso histórico de commits, primeiro, precisamos usar 
+
+**  git log -- oneline:
+
+Ele vai mostrar o histórico de commits da minha branch master, Em seguida, precisamos apenas especificar o código hash ao lado do commit que desejamos desfazer:
+
+**  git revert 3321844 (esse número apareceu quando eu fiz o comando anterior)
+
+Depois disso, basta pressionar shift + q para sair:
+
+O comando git revert desfará o commit especificado, mas criará outro commit sem excluir o antigo:
+
+
+Novo commit do "revert"
+A vantagem de se usar git revert é não tocar no histórico de commits. Isso significa que você ainda pode ver todos os commits do seu histórico, mesmo os revertidos.
+
+Outra medida de segurança está no fato de que tudo acontece em nosso sistema local, a menos que façamos o push de tudo para o repositório remoto. 
+É por isso que o uso de git revert é mais seguro e é a forma preferida de desfazer nossos commits.
+
+
+**  10. Git merge
+
+Quando você concluir o desenvolvimento em sua branch e quando tudo funcionar bem, a etapa final é fazer o merge (mesclar ou unir, em português) da branch 
+com a branch pai (dev ou master/main, em geral). Isso é feito com o comando git merge.
+
+Git merge, basicamente, integra sua branch com o recurso e todos os seus commits na branch de desenvolvimento (dev) ou na branch principal (master ou main). 
+É importante lembrar que, primeiro, você precisa estar na branch específica na qual você quer fazer o merge de sua branch com o recurso.
+
+Por exemplo, ao querer fazer o merge de sua branch do recurso na branch dev:
+
+Primeiro, troque para a branch dev:
+
+git checkout dev
+
+Antes do merge, atualize sua branch dev local:
+
+git fetch
+
+Por fim, faça o merge da sua branch do recurso em dev:
+
+git merge <nome-da-branch-com-o-recurso>
+
+Dica: certifique-se de que sua branch dev tem a versão mais recente antes de fazer o merge de suas branches de recurso. Do contrário, você pode ter que lidar 
+com conflitos e outros problemas indesejados.
+
+
+
+
+
+
